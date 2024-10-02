@@ -1,0 +1,17 @@
+services:
+  backend:
+    image: upayanmazumder/learningdocker:latest
+    ports:
+      - 3001:3000
+  proxy:
+   image: caddy
+   ports:
+     - 80:80
+   command:
+     - caddy
+     - reverse-proxy
+     - --access-log
+     - --from
+     - :80
+     - --to
+     - http://backend:3000
