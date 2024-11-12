@@ -1,10 +1,11 @@
 // deno-lint-ignore-file no-explicit-any
 export interface Metadata {
+    ulid: string;
     name: string;
     labels: Record<string, string>;
     annotations: Record<string, string>;
-    creationDate: Date;
-    lastModifiedDate: Date;
+    creationDate: string;
+    lastModifiedDate: string;
 }
 
 export interface Game {
